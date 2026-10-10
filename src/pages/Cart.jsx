@@ -149,7 +149,7 @@ function Cart() {
             for (const medicine of cart) {
 
                 const response = await axios.get(
-                    `http://localhost:8081/medicine/${medicine.id}`
+                    `https://pharmacy-backend-1-wreu.onrender.com`
                 );
 
                 const latestMedicine = response.data;
@@ -170,7 +170,7 @@ function Cart() {
 
             // ONE request: the server reads the real prices and calculates the total
             await axios.post(
-                "http://localhost:8081/order/checkout",
+                "https://pharmacy-backend-1-wreu.onrender.com",
                 {
                     items: cart.map((medicine) => ({
                         medicineId: medicine.id,

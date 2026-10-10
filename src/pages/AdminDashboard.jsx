@@ -41,7 +41,7 @@ function AdminDashboard() {
         try {
 
             const response = await axios.get(
-                "http://localhost:8081/medicine/all"
+                "https://pharmacy-backend-1-wreu.onrender.com"
             );
 
             setMedicines(response.data);
@@ -73,7 +73,7 @@ function AdminDashboard() {
             }
 
             await axios.delete(
-                `http://localhost:8081/medicine/delete/${id}`,
+                `https://pharmacy-backend-1-wreu.onrender.com`,
                 { headers: { Authorization: `Bearer ${user.token}` } }
             );
 

@@ -23,7 +23,7 @@ function Login() {
         try {
 
             const response = await axios.post(
-                "http://localhost:8081/user/login",
+                "https://pharmacy-backend-1-wreu.onrender.com",
                 { email: email, password: password }
             );
 

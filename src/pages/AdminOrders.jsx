@@ -82,7 +82,7 @@ function AdminOrders() {
         try {
 
             const response = await axios.get(
-                `http://localhost:8081/medicine/${medicineId}`
+                `https://pharmacy-backend-1-wreu.onrender.com`
             );
 
             medicineCache.current[medicineId] = response.data;
@@ -107,7 +107,7 @@ function AdminOrders() {
             const headers = { Authorization: `Bearer ${user.token}` };
 
             const response = await axios.get(
-                "http://localhost:8081/order/all",
+                "https://pharmacy-backend-1-wreu.onrender.com",
                 { headers }
             );
 
@@ -126,7 +126,7 @@ function AdminOrders() {
                 try {
 
                     const itemResponse = await axios.get(
-                        `http://localhost:8081/order-item/order/${order.id}`,
+                        `https://pharmacy-backend-1-wreu.onrender.com`,
                         { headers }
                     );
 
@@ -167,7 +167,7 @@ function AdminOrders() {
             const user = getUser();
 
             await axios.put(
-                `http://localhost:8081/order/status/${orderId}?status=${status}`,
+                `https://pharmacy-backend-1-wreu.onrender.com`,
                 {},
                 { headers: { Authorization: `Bearer ${user.token}` } }
             );

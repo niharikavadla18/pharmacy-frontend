@@ -88,7 +88,7 @@ function AddMedicine() {
         try {
 
             await axios.post(
-                "http://localhost:8081/medicine/add",
+                "https://pharmacy-backend-1-wreu.onrender.com",
                 payload(),
                 { headers: { Authorization: `Bearer ${user.token}` } }
             );

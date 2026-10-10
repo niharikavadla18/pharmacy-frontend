@@ -56,7 +56,7 @@ function UpdateMedicine() {
             try {
 
                 const response = await axios.get(
-                    `http://localhost:8081/medicine/${id}`
+                    `https://pharmacy-backend-1-wreu.onrender.com`
                 );
 
                 const m = response.data;
@@ -126,7 +126,7 @@ function UpdateMedicine() {
         try {
 
             await axios.put(
-                `http://localhost:8081/medicine/update/${id}`,
+                `https://pharmacy-backend-1-wreu.onrender.com`,
                 payload(),
                 { headers: { Authorization: `Bearer ${user.token}` } }
             );

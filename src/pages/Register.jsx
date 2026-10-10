@@ -80,7 +80,7 @@ function Register() {
         try {
 
             await axios.post(
-                "http://localhost:8081/user/register",
+                "https://pharmacy-backend-1-wreu.onrender.com",
                 {
                     name: name,
                     email: email,
