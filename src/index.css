@@ -1,0 +1,134 @@
+:root {
+  --green: #0b6e4f;
+  --green-dark: #095a41;
+  --green-soft: #e0f2f1;
+  --bg: #f6f8f9;
+  --card: #ffffff;
+  --text: #475467;
+  --heading: #1d2939;
+  --muted: #667085;
+  --border: #e2e8ec;
+  --danger: #b42318;
+
+  font-family: Inter, system-ui, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+  color-scheme: light;
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4 {
+  color: var(--heading);
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+h1 { font-size: 30px; }
+h2 { font-size: 22px; }
+h3 { font-size: 18px; }
+p { margin: 0 0 8px; }
+a { color: var(--green); }
+
+button {
+  font: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  background: var(--green);
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  padding: 9px 16px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+button:hover:not(:disabled) { background: var(--green-dark); }
+button:active:not(:disabled) { transform: translateY(1px); }
+button:disabled { opacity: 0.55; cursor: not-allowed; }
+
+input, select, textarea {
+  font: inherit;
+  font-size: 15px;
+  color: var(--heading);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(11, 110, 79, 0.12);
+}
+
+/* Layout classes used by CustomerDashboard */
+.page-container {
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 28px 20px 50px;
+}
+
+.dashboard-header { text-align: center; margin-bottom: 24px; }
+.dashboard-header p { color: var(--muted); }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.05);
+}
+
+.page-title { text-align: center; margin-bottom: 4px; }
+.page-subtitle { text-align: center; color: var(--muted); margin-bottom: 22px; }
+
+.medicine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.medicine-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.05);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.medicine-card:hover {
+  box-shadow: 0 8px 22px rgba(16, 24, 40, 0.10);
+  transform: translateY(-2px);
+}
+.medicine-card p { margin: 0 0 6px; }
+
+/* Equal-height cards: buttons always stay at the bottom */
+.medicine-card {
+  display: flex;
+  flex-direction: column;
+}
+.medicine-card > div:last-child {
+  margin-top: auto !important;
+}
+
+/* Show only 3 lines of a long description */
+.desc-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
