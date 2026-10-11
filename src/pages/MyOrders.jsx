@@ -68,7 +68,7 @@ function MyOrders() {
         try {
 
             const response = await axios.get(
-                `https://pharmacy-backend-1-wreu.onrender.com`,
+                "https://pharmacy-backend-1-wreu.onrender.com/medicine/all",
                 { headers }
             );
 
@@ -96,7 +96,7 @@ function MyOrders() {
             const headers = { Authorization: `Bearer ${user.token}` };
 
             const response = await axios.get(
-                `https://pharmacy-backend-1-wreu.onrender.com`,
+                "https://pharmacy-backend-1-wreu.onrender.com/medicine/all",
                 { headers }
             );
 
@@ -115,7 +115,7 @@ function MyOrders() {
                 try {
 
                     const itemResponse = await axios.get(
-                        `https://pharmacy-backend-1-wreu.onrender.com`,
+                        "https://pharmacy-backend-1-wreu.onrender.com/medicine/all",
                         { headers }
                     );
 

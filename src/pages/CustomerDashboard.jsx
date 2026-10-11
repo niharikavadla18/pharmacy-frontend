@@ -62,7 +62,7 @@ function CustomerDashboard() {
         try {
 
             const response = await axios.get(
-                "https://pharmacy-backend-1-wreu.onrender.com"
+                "https://pharmacy-backend-1-wreu.onrender.com/medicine/all"
             );
 
             setMedicines(response.data);
@@ -97,7 +97,7 @@ function CustomerDashboard() {
             }
 
             const response = await axios.get(
-                `https://pharmacy-backend-1-wreu.onrender.com`
+                "https://pharmacy-backend-1-wreu.onrender.com/medicine/all"
             );
 
             setMedicines(response.data);

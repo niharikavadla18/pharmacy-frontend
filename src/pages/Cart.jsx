@@ -149,7 +149,7 @@ function Cart() {
             for (const medicine of cart) {
 
                 const response = await axios.get(
-                    `https://pharmacy-backend-1-wreu.onrender.com`
+                    "https://pharmacy-backend-1-wreu.onrender.com/medicine/all"
                 );
 
                 const latestMedicine = response.data;
